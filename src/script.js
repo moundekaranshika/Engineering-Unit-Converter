@@ -14,6 +14,21 @@ const units = {
     Celsius: "C",
     Fahrenheit: "F",
     Kelvin: "K"
+  },
+  Torque: {
+    "Nm": 1,
+    "lb-ft": 1.35582
+  },
+  Speed: {
+    "m/s": 1,
+    "km/h": 0.277778,
+    "mph": 0.44704
+  },
+  Energy: {
+    "Joule": 1,
+    "kWh": 3600000,
+    "kcal": 4184,
+    "BTU": 1055.06
   }
 };
 
@@ -31,6 +46,9 @@ function updateUnits() {
   }
 }
 
+// Initialize dropdowns on page load
+window.onload = updateUnits;
+
 function convert() {
   const category = document.getElementById("category").value;
   const value = parseFloat(document.getElementById("inputValue").value);
@@ -47,8 +65,8 @@ function convert() {
   if (category === "Temperature") {
     result = convertTemperature(value, from, to);
   } else {
-    const base = value * units[category][from];
-    result = base / units[category][to];
+    const base = value * units[category][from]; // Convert to base unit
+    result = base / units[category][to];        // Convert to target unit
   }
 
   document.getElementById("result").textContent = `Result: ${result.toFixed(4)} ${to}`;
@@ -65,3 +83,4 @@ function convertTemperature(value, from, to) {
   else if (to === "Fahrenheit") return celsius * 9 / 5 + 32;
   else if (to === "Kelvin") return celsius + 273.15;
 }
+
