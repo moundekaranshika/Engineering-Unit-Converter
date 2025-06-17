@@ -1,6 +1,6 @@
 # 🌐 Engineering Unit Converter
 
-A simple, interactive web-based tool to convert between various **engineering units**. Built using HTML, CSS, and JavaScript, and fully deployable via GitHub Pages.
+A simple, interactive web-based tool to convert between various **engineering units**. Built using HTML, CSS, and JavaScript.
 
 ## 🔧 Features
 
