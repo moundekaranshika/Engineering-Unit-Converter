@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Engineering Unit Converter</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Engineering Unit Converter</h2>
+    <label>Category:
+      <select id="category" onchange="updateUnits()">
+        <option value="Length">Length</option>
+        <option value="Temperature">Temperature</option>
+        <option value="Pressure">Pressure</option>
+      </select>
+    </label>
+
+    <label>Value:
+      <input type="number" id="inputValue" />
+    </label>
+
+    <label>From:
+      <select id="fromUnit"></select>
+    </label>
+
+    <label>To:
+      <select id="toUnit"></select>
+    </label>
+
+    <button onclick="convert()">Convert</button>
+    <p id="result">Result: </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
